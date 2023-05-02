@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
           user_params.permit(:name, :email, :password, :password_confirmation)
         end
     end
+
+    def after_sign_in_path_for(_resource)
+        groups_path
+    end
 end
