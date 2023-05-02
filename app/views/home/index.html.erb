@@ -1,4 +1,11 @@
 <h1>BudgetApp</h1>
 
-<%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark my-2 my-sm-0 me-3' %>
-<%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark my-2 my-sm-0' %>
+<% if user_signed_in? %>
+    <span class="navbar-text">
+    Signed in as <strong><%= current_user.name %></strong>
+    </span>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark my-2 my-sm-0' %>
+<% else %>
+    <%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark my-2 my-sm-0 me-3' %>
+    <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark my-2 my-sm-0' %>
+<% end %>
