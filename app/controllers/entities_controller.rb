@@ -1,12 +1,12 @@
 class EntitiesController < ApplicationController
-    before_action :set_group
+  before_action :set_group
 
   def new
     @current_user = current_user
     @entity = Entity.new
     @groups = current_user.groups
   end
-  
+
   def destroy
     @entity = Entity.find(params[:id]).destroy
     respond_to do |f|
