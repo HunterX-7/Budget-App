@@ -15,15 +15,15 @@ RSpec.describe 'groups/new', type: :feature do
   end
 
   it 'displays page header' do
-    expect(page).to have_content("CATEGORIES")
+    expect(page).to have_content('CATEGORIES')
   end
 
   it 'displays form header name' do
-    expect(page).to have_content("ADD CATEGORY")
+    expect(page).to have_content('ADD CATEGORY')
   end
 
   it 'displays group field name' do
-    expect(page).to have_content("SELECT AN ICON")
+    expect(page).to have_content('SELECT AN ICON')
   end
 
   it 'displays submit button to create' do

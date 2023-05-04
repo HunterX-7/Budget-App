@@ -15,7 +15,7 @@ RSpec.describe 'groups/index', type: :feature do
   end
 
   it 'displays page header' do
-    expect(page).to have_content("CATEGORIES")
+    expect(page).to have_content('CATEGORIES')
   end
 
   it 'displays group name' do

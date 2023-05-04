@@ -15,11 +15,11 @@ RSpec.describe 'entities/new', type: :feature do
   end
 
   it 'displays page header' do
-    expect(page).to have_content("TRANSACTIONS")
+    expect(page).to have_content('TRANSACTIONS')
   end
 
   it 'displays form header name' do
-    expect(page).to have_content("ADD TRANSACTION")
+    expect(page).to have_content('ADD TRANSACTION')
   end
 
   it 'displays submit button to add' do

@@ -7,12 +7,12 @@ RSpec.describe User, type: :model do
   end
 
   context 'Association tests' do
-    it 'Should have user name' do 
-        expect(@user.name).to eq('francisco')
+    it 'Should have user name' do
+      expect(@user.name).to eq('francisco')
     end
 
-    it 'Should have user name' do 
-        expect(@user.email).to eq('francisco@gmail.com')
+    it 'Should have user name' do
+      expect(@user.email).to eq('francisco@gmail.com')
     end
 
     it 'Should have many groups' do

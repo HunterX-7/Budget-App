@@ -15,7 +15,7 @@ RSpec.describe 'groups/show', type: :feature do
   end
 
   it 'displays page header' do
-    expect(page).to have_content("TRANSACTIONS")
+    expect(page).to have_content('TRANSACTIONS')
   end
 
   it 'displays group name' do
