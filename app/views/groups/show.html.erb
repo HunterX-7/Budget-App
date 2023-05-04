@@ -1,0 +1,67 @@
+<nav class="navbar navbar-collapse navbar-dark bg-dark">
+  <div class="container-fluid">
+    <%= link_to groups_path, class: "navbar-brand" do %>
+      <%= image_tag "left-arrow.png" %>
+    <% end %>
+    <h2 class="navbar-brand mb-0">TRANSACTIONS</h2>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact", root_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<p class="notice ms-3 mt-3"><%= notice %></p>
+<p class="alert ms-3 mt-3"><%= alert %></p>
+
+<div class="container">
+  <div class="container border border-3 rounded p-4">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-start align-items-center mb-3">
+        <%= image_tag @group.icon, alt: "Group image", class: "img-fluid rounded"%>
+        <h3 class="ms-3 my-auto">
+          <%= @group.name %>
+        </h3>
+      </div>
+      <div class="col-12">
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis augue ac enim lacinia ullamcorper.
+        </p>
+        <hr>
+        <% @entities.each do |entity| %>
+          <div class="d-flex justify-content-between align-items-center my-3">
+            <div>
+              <h5 class="m-0"><%= entity.name %></h5>
+              <small>$ <%= entity.amount %></small>
+            </div>
+            <div>
+              <%= button_to "Delete", group_entity_path(@group, entity), method: :delete, data: { turbo_confirm: "Are you sure?" }, 
+                class: "btn btn-danger p-1" %> 
+            </div>
+          </div>
+          <hr>
+        <% end %>
+        <div class="d-flex justify-content-end">
+          <h5 class="me-3">Total:</h5>
+          <h5>$ <%= @group.entities.sum(:amount) %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <%= link_to "ADD A TRANSACTION", new_group_entity_path(@group), class: "fixed-bottom btn btn-dark mb-3 mx-auto", style: "width: 98%" %>
+</div>
