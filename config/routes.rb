@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "home#index"
 
-  resources :groups
+  resources :groups do
+    resources :entities
+  end
 end
