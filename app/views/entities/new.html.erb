@@ -1,9 +1,9 @@
-<nav class="navbar navbar-collapse navbar-dark bg-dark">
+<nav class="navbar navbar-collapse navbar-primary bg-primary">
   <div class="container-fluid">
-    <%= link_to groups_path, class: "navbar-brand" do %>
+    <%= link_to group_path(@group), class: "navbar-brand" do %>
       <%= image_tag "left-arrow.png" %>
     <% end %>
-    <h2 class="navbar-brand mb-0">TRANSACTIONS</h2>
+    <h2 class="navbar-brand mb-0 text-light">TRANSACTIONS</h2>
     <div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -41,14 +41,17 @@
       <div class="col-md-12">
         <% @groups.each do |group| %>
           <p>
-            <% if group.id == params[:group_id].to_i %>
-              <%= f.check_box :category_id, { multiple: true, checked: true, hidden: true }, group.id, nil %>
+            <% if group.name == params[:group_id].to_i %>
+              <%= f.check_box :category_id, { multiple: true, checked: true }, group.id, nil %>
+            <% else %>
+              <%= f.check_box :category_id, { multiple: true }, group.id, nil %>
             <% end %>
+            <%= group.name %>
           </p>
         <% end %>
       </div>
       <div class="col-md-12">
-        <%= f.submit "ADD", class: "btn btn-dark", style: "width: 100%" %>
+        <%= f.submit "ADD", class: "btn btn-success", style: "width: 100%" %>
       </div>
     </div>
   <% end %>
