@@ -1,9 +1,9 @@
-<nav class="navbar navbar-collapse navbar-dark bg-dark">
+<nav class="navbar navbar-collapse navbar-primary bg-primary">
   <div class="container-fluid">
     <%= link_to groups_path, class: "navbar-brand" do %>
       <%= image_tag "left-arrow.png" %>
     <% end %>
-    <h2 class="navbar-brand mb-0">CATEGORIES</h2>
+    <h2 class="navbar-brand mb-0 text-light">CATEGORIES</h2>
     <div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -111,6 +111,6 @@
           <% end %>
         </div>
       </div>
-      <%= f.submit "Create", class: "btn btn-dark", style: "width: 100%" %>
+      <%= f.submit "Create", class: "btn btn-success", style: "width: 100%" %>
   <% end %>
 </div>

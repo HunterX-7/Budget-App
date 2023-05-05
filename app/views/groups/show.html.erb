@@ -1,9 +1,9 @@
-<nav class="navbar navbar-collapse navbar-dark bg-dark">
+<nav class="navbar navbar-collapse navbar-primary bg-primary">
   <div class="container-fluid">
     <%= link_to groups_path, class: "navbar-brand" do %>
       <%= image_tag "left-arrow.png" %>
     <% end %>
-    <h2 class="navbar-brand mb-0">TRANSACTIONS</h2>
+    <h2 class="navbar-brand mb-0 text-light">TRANSACTIONS</h2>
     <div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
 <p class="alert ms-3 mt-3"><%= alert %></p>
 
 <div class="container">
-  <div class="container border border-3 rounded p-4">
+  <div class="container border-0 shadow rounded p-4">
     <div class="row">
       <div class="col-12 d-flex justify-content-start align-items-center mb-3">
         <%= image_tag @group.icon, alt: "Group image", class: "img-fluid rounded"%>
@@ -62,6 +62,7 @@
     </div>
   </div>
 </div>
-<div>
-  <%= link_to "ADD A TRANSACTION", new_group_entity_path(@group), class: "fixed-bottom btn btn-dark mb-3 mx-auto", style: "width: 98%" %>
+
+<div class="fixed-bottom p-3 row bg-success text-center ">
+  <%= link_to "ADD A TRANSACTION", new_group_entity_path(@group), class: "btn btn-success btn-custom mx-auto", style: "width: 98%" %>
 </div>

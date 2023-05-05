@@ -1,4 +1,4 @@
-<nav class="navbar navbar-collapse navbar-dark bg-dark">
+<nav class="navbar navbar-collapse navbar-primary bg-primary">
   <div class="container-fluid">
     <div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,42 +7,53 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link text-light" %>
           </li>
           <li class="nav-item">
-            <%= link_to "About", root_path, class: "nav-link" %>
+            <%= link_to "About", root_path, class: "nav-link text-light" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Contact", root_path, class: "nav-link" %>
+            <%= link_to "Contact", root_path, class: "nav-link text-light" %>
           </li>
         </ul>
       </div>
     </div>
-    <h2 class="navbar-brand mb-0">CATEGORIES</h2>
+    <h2 class="navbar-brand mb-0 text-light p-3">CATEGORIES</h2>
     <%= link_to image_tag("search.png", class: "navbar-brand"), root_path %>
+      <div class="container-fluid">
+    <div>
+  </div>
+  <div class="p-2 row bg-primary text-center ">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+      <span class="navbar-text text-center text-light">Most Recent</span>
+    </div>
+    <div class="col-4">
+      <span class="navbar-text text-end ms-5 text-light">Most Ancient</span>
+    </div>
   </div>
 </nav>
 <p class="notice ms-3 mt-3"><%= notice %></p>
 <p class="alert ms-3 mt-3"><%= alert %></p>
-
-<div class="container-fluid p-4">
+<div class="container-fluid p-3">
   <ul class="list-group hover">
     <% @groups.each do |group| %>
       <% if user_signed_in? && group.user_id == current_user.id %>
-      <li class="list-group-item d-flex border border-3 rounded justify-content-between align-items-center mb-3">
+      <li class="list-group-item d-flex rounded border-0 justify-content-between align-items-center mb-3 shadow">
         <div>
           <%= image_tag group.icon, alt: "Group image", class: "me-3" %>
         </div>
         <div class="text-center">
           <h3 class="m-0">
-            <%= link_to group.name, group_path(group), { class: "text-dark text-decoration-none" } %>
+            <%= link_to group.name, group_path(group), { class: "text-secondary text-decoration-none" } %>
           </h3>
           <p class="text-muted m-0">
             <%= group.updated_at.strftime('%d %b %Y')%>
           </p>
         </div>
         <div class="text-center">
-          <span class="badge bg-dark rounded-pill mb-4">
+          <span class="mb-2 fw-bold">
             $<%= group.entities.sum(:amount) %>
           </span>
           <%= button_to "Delete", group_path(group), method: :delete, data: { turbo_confirm: "Are you sure?" }, 
@@ -53,6 +64,6 @@
     <% end %>
   </ul>
 </div>
-<div class="container-fluid">
-  <%= link_to "ADD CATEGORY", new_group_path, class: "fixed-bottom btn btn-dark mb-3 mx-auto", style: "width: 98%" %>
+<div class="fixed-bottom p-3 row bg-success text-center ">
+  <%= link_to "ADD CATEGORY", new_group_path, class: "btn btn-success btn-custom mx-auto", style: "width: 98%" %>
 </div>
