@@ -16,6 +16,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [🚀 Live Demo & Project Presentation](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -63,6 +64,11 @@ This project was implemented using:
 - **Register and log in, so that the data is private to them**
 - **Introduce new transactions associated with a category**
 - **See the money spent on each category**
+
+## 🚀 Live Demo & Project Presentation <a name="live-demo"></a>
+
+- [Live Demo](https://hunterx-7-budget-app.onrender.com/)
+- [Project Presentation](https://www.loom.com/share/1458ebf088884c91ae33e74c245e185b)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,17 +124,10 @@ To run the project, execute the following command in the project directory:
 rails server
 ```
 
-To run test, execute the following commands in the project directory.
-
-To run the unit tests:
+To run test, execute the following commands in the project directory:
 
   ```console
-  rspec ./spec/models 
-  ```
-To run the integration tests:
-
-  ```console
-  rspec ./spec/views
+  rspec spec
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -170,7 +169,7 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Hat tip to anyone whose code was used.
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
