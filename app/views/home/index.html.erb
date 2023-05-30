@@ -1,0 +1,25 @@
+<p class="notice ms-3 mt-3"><%= notice %></p>
+<p class="alert ms-3 mt-3"><%= alert %></p>
+<div class="container text-center">
+<h1 class="display-2 mb-5">BudgetApp</h1>
+  <div class="row mb-5">
+    <div class="col-6 offset-3 justify-content-center">
+      <%= image_tag "budget.png", alt: "App Logo", class: "", style: "width: 60%" %>
+    </div>
+  </div>
+<% if user_signed_in? %>
+  <span class="navbar-text">
+    Signed in as <strong><%= current_user.name %></strong>
+  </span>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger my-2 me-3' %>
+<% else %>
+<div class="container">
+    <div>
+    <%= link_to 'Log in', new_user_session_path, class: 'btn btn-primary my-2 me-3', style: "width: 100%" %>
+    </div>
+    <div>
+    <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-primary my-2', style: "width: 100%" %>
+    </div>
+</div>
+<% end %>
+</div>

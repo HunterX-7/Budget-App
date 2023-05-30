@@ -1,0 +1,58 @@
+<nav class="navbar navbar-collapse navbar-primary bg-primary">
+  <div class="container-fluid">
+    <%= link_to group_path(@group), class: "navbar-brand" do %>
+      <%= image_tag "left-arrow.png" %>
+    <% end %>
+    <h2 class="navbar-brand mb-0 text-light">TRANSACTIONS</h2>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact", root_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<p class="notice ms-3 mt-3"><%= notice %></p>
+<p class="alert ms-3 mt-3"><%= alert %></p>
+<div class="container">
+  <%= form_with model: @entity, url: group_entities_path(@group), method: :post, local: true, html: { class: "needs-validation", novalidate: true } do |f| %>
+    <div class="mb-3 text-center">
+      <h2>ADD TRANSACTION</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <%= f.text_field :name, autocomplete: "Entity name", placeholder: "Name", class: "form-control", required: true %>
+      </div>
+      <div class="col-md-6">
+        <%= f.text_field :amount, autocomplete: "Amount", placeholder: "Amount", class: "form-control", required: true %>
+      </div>
+      <div class="col-md-12">
+        <% @groups.each do |group| %>
+          <p>
+            <% if group.name == params[:group_id].to_i %>
+              <%= f.check_box :category_id, { multiple: true, checked: true }, group.id, nil %>
+            <% else %>
+              <%= f.check_box :category_id, { multiple: true }, group.id, nil %>
+            <% end %>
+            <%= group.name %>
+          </p>
+        <% end %>
+      </div>
+      <div class="col-md-12">
+        <%= f.submit "ADD", class: "btn btn-success", style: "width: 100%" %>
+      </div>
+    </div>
+  <% end %>
+</div>

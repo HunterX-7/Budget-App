@@ -1,0 +1,116 @@
+<nav class="navbar navbar-collapse navbar-primary bg-primary">
+  <div class="container-fluid">
+    <%= link_to groups_path, class: "navbar-brand" do %>
+      <%= image_tag "left-arrow.png" %>
+    <% end %>
+    <h2 class="navbar-brand mb-0 text-light">CATEGORIES</h2>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact", root_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<p class="notice ms-3 mt-3"><%= notice %></p>
+<p class="alert ms-3 mt-3"><%= alert %></p>
+
+<div class="container">
+  <%= form_with model: @group, url: groups_path, method: :post, local: true, html: { class: "new-category-form" } do |f| %>
+    <div class="text-center mb-3">
+      <h2>ADD CATEGORY</h2>  
+    </div>
+    <div class="mb-3">
+      <%= f.text_field :name, autocomplete: "Group name", placeholder: "Name", class: "form-control" %>
+    </div>
+    <div class="container text-center">
+      <h2 class="text-center mb-3">SELECT AN ICON</h2>
+      <div class="row mb-3">
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon1.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon1.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon2.png", class: "form-check-input" %>
+          <%= label_tag :entertainment do %>
+            <%= image_tag "icon2.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon3.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon3.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon4.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon4.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon5.png", class: "form-check-input" %>
+          <%= label_tag :education do %>
+            <%= image_tag "icon5.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon6.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon6.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon7.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon7.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon8.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon8.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon9.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon9.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon10.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon10.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon11.png", class: "form-check-input" %>
+          <%= label_tag :icon1 do %>
+            <%= image_tag "icon11.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <%= f.radio_button :icon, "icon12.png", class: "form-check-input" %>
+          <%= label_tag :default do %>
+            <%= image_tag "icon12.png", alt: "icon-image", class: "img-thumbnail" %>
+          <% end %>
+        </div>
+      </div>
+      <%= f.submit "Create", class: "btn btn-success", style: "width: 100%" %>
+  <% end %>
+</div>
